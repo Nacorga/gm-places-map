@@ -1,0 +1,12 @@
+<div class="gm-map" [ngClass]="{ hidden: loading }" #mapContainer>
+  <google-map
+    [height]="mapContainer.offsetHeight"
+    [width]="mapContainer.offsetWidth"
+    [center]="center"
+    [options]="options"
+  >
+    <map-marker #markerElem *ngFor="let marker of markers" [position]="marker.position" [options]="marker.options">
+    </map-marker>
+  </google-map>
+  <mat-spinner *ngIf="loading"></mat-spinner>
+</div>
