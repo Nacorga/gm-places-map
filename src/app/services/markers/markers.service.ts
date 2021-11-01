@@ -6,16 +6,16 @@ import { Marker } from 'src/app/models/marker.model';
   providedIn: 'root',
 })
 export class MarkersService {
-  private _markers$: BehaviorSubject<Marker[]> = new BehaviorSubject([] as Marker[]);
-  public markers$: Observable<Marker[]> = this._markers$.asObservable();
+  private _$markers: BehaviorSubject<Marker[]> = new BehaviorSubject([] as Marker[]);
+  public $markers: Observable<Marker[]> = this._$markers.asObservable();
   public get markers(): Marker[] {
-    return this._markers$.getValue();
+    return this._$markers.getValue();
   }
 
   constructor() {}
 
   addMarker(place: google.maps.places.PlaceResult) {
-    this._markers$.next([
+    this._$markers.next([
       ...this.markers,
       new Marker({
         lat: place.geometry?.location.lat() as number,

@@ -1,0 +1,22 @@
+<ul class="places-list">
+  <li class="places-list__elem" *ngFor="let place of places; let i = index">
+    <mat-card class="place-card">
+      <div class="place-card__body">
+        <span class="typo">{{ place.customTitle || place.formatted_address }}</span>
+        <button mat-icon-button [matMenuTriggerFor]="menu">
+          <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item (click)="onEdit(i)">
+            <mat-icon>edit</mat-icon>
+            <span>Edit</span>
+          </button>
+          <button mat-menu-item (click)="onRemove(i)">
+            <mat-icon color="warn">delete</mat-icon>
+            <span>Remove</span>
+          </button>
+        </mat-menu>
+      </div>
+    </mat-card>
+  </li>
+</ul>

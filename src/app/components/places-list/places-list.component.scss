@@ -1,0 +1,16 @@
+.places-list {
+  &__elem {
+    & + & {
+      margin-top: 8px;
+    }
+
+    .place-card {
+      &__body {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        column-gap: 16px;
+        align-items: center;
+      }
+    }
+  }
+}
