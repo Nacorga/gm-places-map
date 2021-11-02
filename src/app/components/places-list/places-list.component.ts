@@ -9,18 +9,18 @@ import { Place } from 'src/app/models/place.model';
 export class PlacesListComponent implements OnInit {
   @Input() places: Place[] = [];
 
-  @Output() editPlace = new EventEmitter<number>();
-  @Output() removePlace = new EventEmitter<number>();
+  @Output() edit = new EventEmitter<number>();
+  @Output() remove = new EventEmitter<number>();
 
   constructor() {}
 
   ngOnInit(): void {}
 
   onEdit(idx: number) {
-    this.editPlace.emit(idx);
+    this.edit.emit(idx);
   }
 
   onRemove(idx: number) {
-    this.removePlace.emit(idx);
+    this.remove.emit(idx);
   }
 }

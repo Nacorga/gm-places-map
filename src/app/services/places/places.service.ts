@@ -17,4 +17,15 @@ export class PlacesService {
   addPlace(place: Place) {
     this._$places.next([...this.places, place]);
   }
+
+  updatePlaceTitle(idx: number, title: string) {
+    const places = this.places;
+    places[idx].customTitle = title;
+    this._$places.next(places);
+  }
+
+  removePlace(idx: number) {
+    const places = this.places;
+    this._$places.next(places.filter((_, i) => idx !== i));
+  }
 }

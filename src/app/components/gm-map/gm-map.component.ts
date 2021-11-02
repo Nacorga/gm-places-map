@@ -32,7 +32,6 @@ export class GmMapComponent implements OnInit {
 
   @ViewChild(GoogleMap, { static: false }) set map(map: GoogleMap) {
     this._map = map;
-    this.fitBounds();
   }
 
   get map(): GoogleMap {
@@ -70,7 +69,8 @@ export class GmMapComponent implements OnInit {
 
   fitBounds() {
     if (this.map && this.markers.length > 0) {
-      this.markers.map((elem) => this.bounds.extend(new google.maps.LatLng(elem.position.lat, elem.position.lng)));
+      this.bounds = new google.maps.LatLngBounds();
+      this.markers.forEach((elem) => this.bounds.extend(new google.maps.LatLng(elem.position.lat, elem.position.lng)));
       this.map.fitBounds(this.bounds);
     }
   }

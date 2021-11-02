@@ -3,6 +3,7 @@
     <app-gm-autocomplete (placeChange)="handlePlace($event)"></app-gm-autocomplete>
   </div>
   <div class="places-view__list">
-    <app-places-list [places]="($places | async) ?? []"></app-places-list>
+    <app-places-list [places]="($places | async) ?? []" (edit)="editPlace($event)" (remove)="removeItems($event)">
+    </app-places-list>
   </div>
 </div>

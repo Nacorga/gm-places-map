@@ -23,4 +23,9 @@ export class MarkersService {
       }),
     ]);
   }
+
+  removeMarker(idx: number) {
+    const markers = this.markers;
+    this._$markers.next(markers.filter((_, i) => idx !== i));
+  }
 }
