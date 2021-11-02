@@ -7,7 +7,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "format": "prettier --config ./.prettierrc --write \"src/{app,styles,environments}/**/*{.ts,.html,.scss}\""
+    "format": "prettier --config ./.prettierrc --write \"src/{app,styles,environments}/**/*{.ts,.html,.scss}\"",
+    "deploy": "ng build --prod --base-href=./"
   },
   "private": true,
   "dependencies": {
