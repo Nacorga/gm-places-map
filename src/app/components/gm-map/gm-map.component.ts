@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, ViewChild } from '@angular/core';
 import { GoogleMap, MapInfoWindow } from '@angular/google-maps';
 import { Marker } from 'src/app/models/marker.model';
 
@@ -20,7 +20,7 @@ const MAP_OPTS: google.maps.MapOptions = {
   styleUrls: ['./gm-map.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class GmMapComponent implements OnInit {
+export class GmMapComponent {
   @Input() set markers(markers: Marker[]) {
     this._markers = markers;
     this.fitBounds();
@@ -48,24 +48,7 @@ export class GmMapComponent implements OnInit {
   infoContent = '';
   loading = true;
 
-  constructor(private cdr: ChangeDetectorRef) {}
-
-  ngOnInit() {
-    this.getCurrentPosition();
-  }
-
-  getCurrentPosition() {
-    navigator.geolocation.getCurrentPosition((position) => {
-      if (position) {
-        this.center = {
-          lat: position.coords.latitude,
-          lng: position.coords.longitude,
-        };
-      }
-      this.loading = false;
-      this.cdr.detectChanges();
-    });
-  }
+  constructor() {}
 
   fitBounds() {
     if (this.map && this.markers.length > 0) {

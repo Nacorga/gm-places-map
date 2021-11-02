@@ -8,8 +8,6 @@ export interface IMarkerOpts {
   animation: google.maps.Animation;
 }
 export class Marker {
-  uuid!: string;
-  placeId!: string;
   position!: IPosition;
   label: IMarkerLabel = {
     color: 'red',

@@ -5,6 +5,6 @@
       <input matInput [formControl]="fc" />
       <mat-icon matSuffix>lock</mat-icon>
     </mat-form-field>
-    <button mat-flat-button color="primary" (click)="onSubmit()">Submit</button>
+    <button mat-flat-button color="primary" [disabled]="!fc.value" (click)="onSubmit()">Submit</button>
   </div>
 </div>

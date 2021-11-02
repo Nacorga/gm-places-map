@@ -1,8 +1,6 @@
 import { IPosition } from '../interfaces/position.interface';
 
 export class Place {
-  uuid!: string;
-  markerId!: string;
   address_components: { long_name: string; short_name: string }[] = [];
   formatted_address: string | undefined;
   place_id: string | undefined;
