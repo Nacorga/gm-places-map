@@ -25,7 +25,7 @@ module.exports = function (config) {
       suppressAll: true // removes the duplicated traces
     },
     coverageReporter: {
-      dir: require('path').join(__dirname, './coverage/google-maps'),
+      dir: require('path').join(__dirname, './coverage/gm-places-map'),
       subdir: '.',
       reporters: [
         { type: 'html' },
