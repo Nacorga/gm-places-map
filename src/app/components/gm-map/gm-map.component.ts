@@ -43,7 +43,7 @@ export class GmMapComponent implements OnInit {
   _map!: GoogleMap;
   _markers: Marker[] = [];
   center!: google.maps.LatLngLiteral;
-  bounds = new google.maps.LatLngBounds();
+  bounds!: google.maps.LatLngBounds;
   options: google.maps.MapOptions = MAP_OPTS;
   infoContent = '';
   loading = true;

@@ -1,4 +1,4 @@
-<div class="app">
+<div class="app" *ngIf="scriptLoaded; else setGmApiKeyTpl">
   <div class="app__section places">
     <app-places-view></app-places-view>
   </div>
@@ -6,3 +6,7 @@
     <app-map-view></app-map-view>
   </div>
 </div>
+
+<ng-template #setGmApiKeyTpl>
+  <app-input-view (submit)="handleApiKey($event)"></app-input-view>
+</ng-template>

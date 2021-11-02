@@ -1,0 +1,26 @@
+.input-view {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    column-gap: 0.5rem;
+    width: 100%;
+    max-width: 680px;
+  }
+
+  .form-field {
+    width: 100%;
+  }
+
+  button {
+    margin-top: 0.25em;
+    height: 60px;
+    width: 100%;
+    min-width: 120px;
+  }
+}

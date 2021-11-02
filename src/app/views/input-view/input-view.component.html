@@ -1,0 +1,10 @@
+<div class="input-view">
+  <div class="input-view__row">
+    <mat-form-field class="form-field" appearance="outline">
+      <mat-label>Type your API Key</mat-label>
+      <input matInput [formControl]="fc" />
+      <mat-icon matSuffix>lock</mat-icon>
+    </mat-form-field>
+    <button mat-flat-button color="primary" (click)="onSubmit()">Submit</button>
+  </div>
+</div>
