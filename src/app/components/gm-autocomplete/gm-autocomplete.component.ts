@@ -6,10 +6,6 @@ import { AfterViewInit, Component, ElementRef, EventEmitter, Input, NgZone, Outp
   styleUrls: ['./gm-autocomplete.component.scss'],
 })
 export class GmAutocompleteComponent implements AfterViewInit {
-  @Input() label!: string;
-  @Input() disabled!: boolean;
-  @Input() value: string = '';
-
   @Output() placeChange = new EventEmitter<google.maps.places.PlaceResult>();
 
   @ViewChild('search') searchElementRef!: ElementRef;

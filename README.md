@@ -9,3 +9,7 @@ To use this app, you have to enable the Maps Javascript API and Places API from 
 ## See a demo
 
 You can see a demo [here](https://nacorga.github.io/gm-places-map/)
+
+## See the tutorial
+
+You can see the Medium tutorial [here](https://medium.com/@ncg2392/angular-12-with-reactive-google-map-markers-based-in-google-places-autocomplete-ebb318e5e4f2)
